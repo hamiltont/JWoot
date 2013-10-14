@@ -18,7 +18,7 @@ WootEventListener wel = new WootEventListener() {
   }
 };
 
-WootApi api = new WootApi("<my-api-key">");
+WootApi api = new WootApi("<my-api-key>");
 api.fetch(WootApi.WOOT_URL_NORM, wel);
 ```
 
