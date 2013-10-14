@@ -1,9 +1,7 @@
 package edu.vt.ece4564.wootparser.fetcher;
 
 import edu.vt.ece4564.wootparser.WootEvent;
-import edu.vt.ece4564.wootparser.WootEventAndListener;
 import edu.vt.ece4564.wootparser.WootEventListener;
-import edu.vt.ece4564.wootparser.WootProgressPoster;
 
 /**
  * the Woot.com API can return a ton of data (e.g. 1-2MB). Most of this data can

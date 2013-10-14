@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Java representation of a woot.com event. No special handling of specific
+ * event types
  * 
  * @author Randall Ferrance
  * @contributor Hamilton Turner
@@ -87,11 +89,11 @@ public class WootEvent {
 	public Double getSalePrice() {
 		return getFirstItems().get(0).getSalePrice();
 	}
-	
+
 	public String toString() {
 		StringBuilder b = new StringBuilder("[WootEvent: ");
 		b.append(title).append(", ").append(offers.size()).append(" offers]");
 		return b.toString();
 	}
-	
+
 }

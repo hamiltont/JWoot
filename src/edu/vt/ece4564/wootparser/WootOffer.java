@@ -117,7 +117,7 @@ public class WootOffer {
 	public void setStats(String stats_) {
 		this.stats_ = stats_;
 	}
-	
+
 	public String toString() {
 		StringBuilder b = new StringBuilder("[WootOffer: ");
 		b.append(title_).append(", ").append(items_.size()).append(" items]");

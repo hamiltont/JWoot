@@ -15,13 +15,21 @@ import org.json.simple.parser.ParseException;
 import android.os.AsyncTask;
 import android.util.Log;
 import edu.vt.ece4564.wootparser.WootEvent;
-import edu.vt.ece4564.wootparser.WootEventAndListener;
 import edu.vt.ece4564.wootparser.WootEventListener;
 import edu.vt.ece4564.wootparser.WootEventParser;
-import edu.vt.ece4564.wootparser.WootProgressPoster;
 import edu.vt.ece4564.wootparser.fetcher.WootFetcherTask.WootFetcherRequest;
 import edu.vt.ece4564.wootparser.fetcher.WootFetcherTask.WootFetcherResponse;
 
+/**
+ * Used to start a new thread, download the woot.com data, instruct
+ * {@link WootEventParser} to parse that data. Uses {@link WootEventListener}s,
+ * specifically ones that implement {@link WootProgressPoster}, to ensure that
+ * all calls to {@link WootEventListener#onWootEvent(WootEvent)} occur on the ui
+ * thread
+ * 
+ * @author hamiltont
+ * 
+ */
 public class WootFetcherTask
 		extends
 		AsyncTask<WootFetcherRequest, WootEventAndListener, WootFetcherResponse> {
@@ -100,12 +108,11 @@ public class WootFetcherTask
 	}
 
 	@Override
-    protected void onProgressUpdate(WootEventAndListener... events) {
-        for (WootEventAndListener wel: events)
-        		wel.listener_.onWootEvent(wel.event_);
-    }
+	protected void onProgressUpdate(WootEventAndListener... events) {
+		for (WootEventAndListener wel : events)
+			wel.listener_.onWootEvent(wel.event_);
+	}
 
-	
 	@Override
 	protected void onPostExecute(WootFetcherResponse result) {
 		super.onPostExecute(result);

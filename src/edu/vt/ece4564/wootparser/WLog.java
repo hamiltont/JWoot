@@ -2,11 +2,18 @@ package edu.vt.ece4564.wootparser;
 
 import android.util.Log;
 
+/**
+ * Log adapter that should allow this codebase to easily be transitioned from
+ * Android into plain Java
+ * 
+ * @author hamiltont
+ * 
+ */
 public class WLog {
 	/**
 	 * Enable or disable the log. Disabling typically cuts runtime by 50%
 	 */
-	public static final boolean DEBUG = true;
+	public static final boolean DEBUG = false;
 	public static final String TAG = "Woot Parser";
 
 	public static void i(Object... logs) {

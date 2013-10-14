@@ -1,7 +1,11 @@
-package edu.vt.ece4564.wootparser;
+package edu.vt.ece4564.wootparser.fetcher;
 
-import edu.vt.ece4564.wootparser.fetcher.WootFetcherTask;
-
+/**
+ * Used to deal with concurrency inside of {@link WootFetcherTask}
+ * 
+ * @author hamiltont
+ * 
+ */
 public interface WootProgressPoster {
 
 	/**

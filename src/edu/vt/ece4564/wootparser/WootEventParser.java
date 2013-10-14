@@ -9,7 +9,14 @@ import org.json.simple.parser.ContentHandler;
 import org.json.simple.parser.ParseException;
 
 /**
- * Simple JSON {@link ContentHandler} to parse Woot API v2
+ * JSON.simple {@link ContentHandler} to parse Woot API v2. Uses 'Keys' as a
+ * term for any of the JSON keys, and special keys that I use to denote certain
+ * places in the JSON, such as WOOT_ITEM is a key that denotes the current JSON
+ * object we are parsing is an WootItem object.
+ * 
+ * The {@link WootEventParser} keeps a stack of currently active keys so that it
+ * can understand it's place in the JSON, and any non-understood keys are
+ * ignored.
  * 
  * @author Hamilton Turner
  */

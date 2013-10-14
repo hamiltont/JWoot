@@ -1,9 +1,7 @@
 package edu.vt.ece4564.wootparser.fetcher;
 
 import edu.vt.ece4564.wootparser.WootEvent;
-import edu.vt.ece4564.wootparser.WootEventAndListener;
 import edu.vt.ece4564.wootparser.WootEventListener;
-import edu.vt.ece4564.wootparser.WootProgressPoster;
 import edu.vt.ece4564.wootparser.fetcher.WootFetcherTask.WootFetcherRequest;
 
 /**
